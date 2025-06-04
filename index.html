@@ -6,79 +6,74 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/nipplejs/0.9.0/nipplejs.min.js"></script>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #eef2f7;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom, #1a1a1a, #333);
+      background-attachment: fixed;
       text-align: center;
       padding: 30px;
+      color: #f0f0f0;
     }
+  
     h1 {
-      color: #333;
+      color: #ffffff;
       margin-bottom: 20px;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.5);
     }
+  
     .joysticks {
       display: flex;
       justify-content: center;
-      gap: 100px;
+      gap: 80px;
       margin-top: 40px;
     }
+  
     .joystick-zone {
-      position: relative;
       width: 150px;
       height: 150px;
-      background-color: #fff;
-      border: 2px dashed #ccc;
+      background-color: rgba(255, 255, 255, 0.05);
+      border: 2px dashed #aaa;
       border-radius: 50%;
-      box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+      position: relative;
     }
-    /* Центр джойстика */
-    .center-dot {
+  
+    .joystick-zone::before {
+      content: '';
       position: absolute;
-      width: 10px;
-      height: 10px;
-      background-color: #666;
-      border-radius: 50%;
-      top: 50%;
       left: 50%;
-      transform: translate(-50%, -50%);
-      pointer-events: none;
-      opacity: 0.5;
-    }
-    /* Текущая позиция "ручки" джойстика */
-    .handle-dot {
-      position: absolute;
-      width: 24px;
-      height: 24px;
-      background-color: rgba(0,0,0,0.7);
-      border-radius: 50%;
       top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      pointer-events: none;
-      transition: top 0.1s, left 0.1s; /* плавное движение */
-      box-shadow: 0 0 8px rgba(0,0,0,0.4);
-      z-index: 10;
+      width: 8px;
+      height: 8px;
+      margin-left: -4px;
+      margin-top: -4px;
+      background: #f0f0f0;
+      border-radius: 50%;
+      box-shadow: 0 0 6px rgba(255, 255, 255, 0.7);
     }
+  
     .indicators {
       margin-top: 30px;
       display: flex;
       justify-content: center;
       gap: 40px;
       font-size: 16px;
-      color: #444;
     }
+  
     .indicators div {
-      background-color: #fff;
+      background-color: rgba(0, 0, 0, 0.5);
       padding: 10px 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      min-width: 150px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
     }
+  
     #status {
       margin-top: 30px;
       font-size: 18px;
-      color: #222;
+      color: #ddd;
+      text-shadow: 0 0 3px #000;
     }
   </style>
+  
 </head>
 <body>
 
